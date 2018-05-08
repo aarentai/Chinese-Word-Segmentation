@@ -1,0 +1,4 @@
+#!/bin/bash
+python ./MEMSeg/character_split.py text.utf8 ./MEMSeg/text_split.utf8
+python ./MEMSeg/postagger/maxent_tagger.py -m ./MEMSeg/pku_tagger.model ./MEMSeg/text_split.utf8 > ./MEMSeg/text_tag.utf8
+python ./MEMSeg/character_2_word.py ./MEMSeg/text_tag.utf8 SEGMENT_RESULT.utf8
